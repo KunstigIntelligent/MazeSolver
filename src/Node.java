@@ -6,7 +6,6 @@ public class Node{
 	public char name;
 	public Node parrent;
 	public int cost = 0;
-	private Node goal = null;
 	
 	public Node(int x, int y){
 		X = x ;
@@ -16,8 +15,6 @@ public class Node{
 		X = x ;
 		Y = y;
 		this.parrent = parrent;
-		this.goal = goal;
 		cost = Math.abs(goal.X-x)+Math.abs(goal.Y-y);
 	}
-	
 }
