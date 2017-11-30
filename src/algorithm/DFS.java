@@ -1,16 +1,18 @@
+package algorithm;
 import java.util.List;
+
+import entity.Maze;
+import entity.Node;
 
 public class DFS {
 
 	
 	static int steps;
-	public static boolean searchPath(int[][] maze, Node start, Node goal, List<Node> path){
-		return searchPath(maze, start.X, start.Y, goal, path);
+	public boolean searchPath(Maze maze){
+		return searchPath(maze.getMap(), maze.startNode.X, maze.startNode.Y, maze.goalNode, maze.getPath());
 	}
 	
-	
-	
-	public static boolean searchPath(int[][] maze, int x, int y , Node goal, List<Node> path){
+	public boolean searchPath(int[][] maze, int x, int y , Node goal, List<Node> path){
 		
 		if(maze[y][x] == 2)
 			return false;

@@ -1,5 +1,6 @@
+package entity;
 
-public class Node{
+public class Node implements Comparable<Node>{
 
 	public int X;
 	public int Y;
@@ -16,5 +17,13 @@ public class Node{
 		Y = y;
 		this.parrent = parrent;
 		cost = Math.abs(goal.X-x)+Math.abs(goal.Y-y);
+	}
+	@Override
+	public int compareTo(Node o) {
+		if(this.cost > o.cost)
+			return 1;
+		else if(this.cost < o.cost)
+			return -1;
+		return 0;
 	}
 }
